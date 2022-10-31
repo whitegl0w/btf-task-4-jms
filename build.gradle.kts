@@ -25,6 +25,7 @@ dependencies {
 	implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml")
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.awaitility:awaitility")
 }
 
 tasks.withType<KotlinCompile> {

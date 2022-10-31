@@ -1,6 +1,5 @@
 package com.example.bfttaskjms.jms
 
-import com.fasterxml.jackson.databind.DatabindException
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
@@ -14,10 +13,7 @@ class PersonJmsErrorHandler : ErrorHandler {
     }
 
     override fun handleError(t: Throwable) {
-        if (t is DatabindException)
-            logger.info("JMS service error: ${t.message}")
-        else
-            throw t
+        logger.info("JMS service error: ${t.message}")
     }
 
 }

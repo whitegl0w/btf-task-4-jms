@@ -17,7 +17,7 @@ class PersonJmsListener(
     }
 
     @JmsListener(destination = "\${jms.queue}")
-    fun personJmsListener(persons: List<Person>) {
+    fun personJmsListener(persons: Array<Person>) {
         persons.forEach {
             if (repository.findByLastNameAndName(it).isEmpty()) {
                 repository.add(it)

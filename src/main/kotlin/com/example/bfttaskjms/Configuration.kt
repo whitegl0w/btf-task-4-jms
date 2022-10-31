@@ -23,7 +23,7 @@ import javax.jms.Message
 class Configuration {
 
     @Bean
-    fun dataSource() = EmbeddedDatabaseBuilder()
+    fun databaseDataSource() = EmbeddedDatabaseBuilder()
         .setType(EmbeddedDatabaseType.H2)
         .addScript("sql/schema.sql")
         .build()
